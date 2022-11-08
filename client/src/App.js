@@ -1,10 +1,15 @@
-import Main from './views/Main';
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
 import './App.css';
-import "bootstrap/dist/css/bootstrap.min.css"
+import Main from './views/Main'
+import Detail from './views/Detail'
 function App() {
   return (
     <div className="App">
-      <Main />
+      <Routes>
+        <Route  element={<Main/>} exact path="/" />
+        <Route  element={<Detail/>} exact path="/:id" />
+      </Routes>
     </div>
   );
 }
